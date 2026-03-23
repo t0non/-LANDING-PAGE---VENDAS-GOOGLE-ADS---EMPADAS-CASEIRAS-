@@ -87,7 +87,7 @@ export default function App() {
         href={WHATSAPP_LINK}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white px-6 py-4 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3 group"
+        className="fixed bottom-6 left-6 right-6 sm:left-auto sm:right-6 z-50 bg-[#25D366] text-white px-6 py-4 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center sm:justify-start gap-3 group"
       >
         <img src={WHATSAPP_ICON_URL} alt="WhatsApp" className="w-6 h-6 object-contain brightness-0 invert" referrerPolicy="no-referrer" />
         <span className="font-bold tracking-wide text-sm uppercase">
@@ -142,21 +142,21 @@ export default function App() {
                     Fornecedor de Salgados em BH e Região
                   </div>
                   <h1 className="text-4xl md:text-7xl font-heading font-medium leading-[1.05] text-stone-900 mb-6 lg:mb-8 tracking-tight">
-                    Fornecedor de Empadas para <span className="italic text-brand-600 font-normal">Revenda em BH</span> | Atacado B2B.
+                    Fornecedor de Empadas <span className="italic text-brand-600 font-normal">Atacado e Varejo</span> em BH.
                   </h1>
                   <p className="text-lg lg:text-xl text-stone-500 mb-8 lg:mb-10 leading-relaxed max-w-xl font-light">
-                    Abasteça seu estabelecimento com a melhor empada de BH. Massa super fina, recheios premium e 14 anos de tradição no atacado.
+                    Fábrica com mais de 14 anos de tradição. Fornecemos empadas prontas e congeladas com massa superfina e recheios premium para lanchonetes, bares e restaurantes.
                   </p>
                   
                   {/* Trust Badges for Ads */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-12">
                     <div className="flex items-center gap-2 text-stone-600">
                       <CheckCircle2 className="w-5 h-5 text-brand-500" />
-                      <span className="text-xs font-bold uppercase tracking-wider">Entrega em BH</span>
+                      <span className="text-xs font-bold uppercase tracking-wider">Frete Grátis em BH</span>
                     </div>
                     <div className="flex items-center gap-2 text-stone-600">
                       <CheckCircle2 className="w-5 h-5 text-brand-500" />
-                      <span className="text-xs font-bold uppercase tracking-wider">Tabela Atacado</span>
+                      <span className="text-xs font-bold uppercase tracking-wider">Preços Especiais</span>
                     </div>
                     <div className="flex items-center gap-2 text-stone-600">
                       <CheckCircle2 className="w-5 h-5 text-brand-500" />
@@ -215,9 +215,9 @@ export default function App() {
           <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {[
-                { icon: <Truck className="w-6 h-6" />, title: "Logística Própria", desc: "Entregas diárias em toda BH e região metropolitana." },
-                { icon: <ShieldCheck className="w-6 h-6" />, title: "Padrão de Qualidade", desc: "Higiene rigorosa e padronização em todos os lotes." },
-                { icon: <Clock className="w-6 h-6" />, title: "Pronta Entrega", desc: "Agilidade no atendimento para seu estoque nunca parar." }
+                { icon: <Truck className="w-6 h-6" />, title: "Frete Grátis em BH", desc: "Entregas sem custo adicional para toda a capital mineira." },
+                { icon: <Award className="w-6 h-6" />, title: "Degustação Grátis", desc: "Agende uma degustação sem compromisso ou levamos amostras até você." },
+                { icon: <PackageCheck className="w-6 h-6" />, title: "Produtos Lacrados", desc: "Salgados embalados e identificados com sabor e validade." }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-5">
                   <div className="text-brand-500 mt-1">{item.icon}</div>
@@ -313,8 +313,8 @@ export default function App() {
                   </a>
                 </motion.div>
               </div>
-              <div className="relative">
-                <div className="aspect-square rounded-[60px] overflow-hidden shadow-2xl">
+              <div className="relative flex flex-col items-center lg:block">
+                <div className="aspect-square rounded-[60px] overflow-hidden shadow-2xl w-full">
                   <img 
                     src="https://files.catbox.moe/nnygyo.webp" 
                     alt="Fornecimento Especializado" 
@@ -322,10 +322,10 @@ export default function App() {
                     referrerPolicy="no-referrer" 
                   />
                 </div>
-                <div className="absolute -bottom-6 -right-2 lg:-bottom-10 lg:-right-10 bg-brand-600 text-white p-6 lg:p-12 rounded-[24px] lg:rounded-[40px] shadow-2xl max-w-[200px] lg:max-w-xs">
-                  <p className="text-white/80 text-[8px] lg:text-[10px] font-bold uppercase tracking-[0.3em] mb-2 lg:mb-4">Diferencial</p>
-                  <p className="text-sm lg:text-xl font-heading italic font-light leading-relaxed">
-                    "Nossa massa super fina é o que garante a recompra no seu estabelecimento."
+                <div className="relative mt-8 lg:mt-0 lg:absolute -bottom-6 -right-2 lg:-bottom-10 lg:-right-10 bg-brand-600 text-white p-8 lg:p-12 rounded-[32px] lg:rounded-[40px] shadow-2xl max-w-[280px] lg:max-w-xs text-center lg:text-left">
+                  <p className="text-white/80 text-[10px] font-bold uppercase tracking-[0.3em] mb-4">Diferencial</p>
+                  <p className="text-lg lg:text-xl font-heading italic font-light leading-relaxed">
+                    "Massa superfina feita com farinha especial para salgados finos."
                   </p>
                 </div>
               </div>
@@ -340,7 +340,7 @@ export default function App() {
               <motion.div {...fadeIn}>
                 <h2 className="text-4xl md:text-5xl font-heading font-medium text-stone-900 mb-6 tracking-tight">Nosso Cardápio Completo</h2>
                 <p className="text-stone-500 max-w-2xl mx-auto font-body font-light text-lg leading-relaxed">
-                  Variedade e sabor artesanal em cada detalhe. Conheça nossa linha completa de salgados para o seu negócio.
+                  Trabalhamos com mais de 25 sabores de empadas, além de tortinhas, pastel assado e empadões com vários sabores.
                 </p>
               </motion.div>
             </div>
@@ -509,7 +509,7 @@ export default function App() {
                       <h3 className="text-lg font-heading font-bold uppercase tracking-widest">Pastel Assado</h3>
                     </div>
                     <ul className="space-y-4">
-                      {["Frango", "Frango com Catupiry"].map((sabor, i) => (
+                      {["Frango", "Frango com Catupiry", "Empadões (Vários Sabores)"].map((sabor, i) => (
                         <li key={i} className="flex items-center gap-4 text-white/80 font-body font-light group">
                           <div className="w-1.5 h-1.5 rounded-full bg-white/30 group-hover:bg-white transition-all" />
                           <span className="group-hover:text-white transition-colors">{sabor}</span>
@@ -673,16 +673,16 @@ export default function App() {
             
             <div className="space-y-2">
               <FAQItem 
-                question="Qual o pedido mínimo para atacado?" 
-                answer="Trabalhamos com quantidades mínimas flexíveis dependendo da região de entrega. Entre em contato para consultar a política específica para o seu bairro." 
-              />
-              <FAQItem 
-                question="Vocês entregam em toda a Grande BH?" 
-                answer="Sim, possuímos logística própria que atende Belo Horizonte, Contagem, Betim, Nova Lima e Santa Luzia em dias programados." 
+                question="Como posso experimentar os produtos?" 
+                answer="Agendamos uma degustação em nossa empresa sem compromisso para você conhecer a qualidade dos nossos recheios e massa. Se preferir, podemos agendar um horário para levar as amostras diretamente até a sua loja." 
               />
               <FAQItem 
                 question="As empadas são entregues prontas para consumo?" 
-                answer="Fornecemos tanto empadas prontas (frescas do dia) quanto opções para finalização no local, dependendo da necessidade da sua operação." 
+                answer="Nossos produtos são entregues congelados e prontos, facilitando o dia a dia. Todos os salgados são embalados e lacrados com identificação do sabor e tempo de validade em cada embalagem." 
+              />
+              <FAQItem 
+                question="Vocês atendem apenas atacado?" 
+                answer="Atendemos tanto atacado quanto varejo. Trabalhamos com varejo em nossa loja física e oferecemos preços especiais e competitivos no atacado para quem deseja revender em lanchonetes, bares e restaurantes." 
               />
               <FAQItem 
                 question="Como funciona o faturamento para empresas?" 
@@ -705,7 +705,7 @@ export default function App() {
                   Onde <span className="italic text-brand-600 font-normal">entregamos</span>.
                 </h2>
                 <p className="text-lg text-stone-500 mb-10 leading-relaxed font-light">
-                  Nossa logística própria atende toda a região metropolitana de Belo Horizonte com entregas programadas de segunda a sábado.
+                  Fazemos entregas dentro de BH sem a cobrança de frete. Atendemos também a região metropolitana com logística própria.
                 </p>
                 
                 <div className="flex flex-wrap justify-center gap-8 mb-12">
