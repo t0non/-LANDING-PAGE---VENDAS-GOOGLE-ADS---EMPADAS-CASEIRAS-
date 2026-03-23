@@ -1,4 +1,4 @@
-import { motion, useInView, useMotionValue, useSpring } from 'motion/react';
+import { motion } from 'motion/react';
 import { 
   MessageCircle, 
   CheckCircle2, 
@@ -18,6 +18,7 @@ import {
 import { useState, useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from 'react-leaflet';
 import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
 // Fix Leaflet default icon issue
 const DefaultIcon = L.icon({
@@ -30,7 +31,7 @@ const DefaultIcon = L.icon({
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const WHATSAPP_LINK = "https://wa.me/5531999999999?text=Olá! Vi o anúncio no Google e gostaria de receber a tabela de preços para atacado.";
+const WHATSAPP_LINK = "https://wa.me/5531984231605?text=Olá! Vi o anúncio no Google e gostaria de receber a tabela de preços para atacado.";
 const WHATSAPP_ICON_URL = "https://files.catbox.moe/ttyh4q.png";
 const LOGO_URL = "https://files.catbox.moe/zksqs4.png";
 const GOOGLE_ICON_URL = "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg";
@@ -40,32 +41,6 @@ const fadeIn = {
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
   transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
-};
-
-const Counter = ({ value }: { value: number }) => {
-  const ref = useRef<HTMLSpanElement>(null);
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, {
-    damping: 30,
-    stiffness: 100,
-  });
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  useEffect(() => {
-    if (isInView) {
-      motionValue.set(value);
-    }
-  }, [motionValue, value, isInView]);
-
-  useEffect(() => {
-    return springValue.on("change", (latest) => {
-      if (ref.current) {
-        ref.current.textContent = Math.floor(latest).toString();
-      }
-    });
-  }, [springValue]);
-
-  return <span ref={ref}>0</span>;
 };
 
 const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
@@ -225,7 +200,7 @@ export default function App() {
                   </div>
                   <div className="absolute -bottom-6 -left-2 lg:-bottom-8 lg:-left-8 bg-white p-6 lg:p-8 rounded-[24px] lg:rounded-[32px] shadow-2xl border border-stone-50">
                     <p className="text-brand-600 font-heading text-4xl lg:text-5xl font-bold mb-1">
-                      <Counter value={14} />+
+                      14+
                     </p>
                     <p className="text-stone-400 text-[8px] lg:text-[10px] font-bold uppercase tracking-widest">Anos no Mercado</p>
                   </div>
@@ -720,61 +695,54 @@ export default function App() {
         {/* Map Section - Delivery Coverage */}
         <section className="py-32 bg-stone-50/30 overflow-hidden">
           <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-            <div className="grid lg:grid-cols-12 gap-16 items-center">
-              <div className="lg:col-span-4">
-                <motion.div {...fadeIn}>
-                  <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-[10px] font-bold uppercase tracking-[0.2em] mb-8">
-                    <MapPin className="w-3 h-3" />
-                    Área de Atendimento
-                  </div>
-                  <h2 className="text-4xl md:text-5xl font-heading font-medium text-stone-900 mb-8 tracking-tight">
-                    Onde <span className="italic text-brand-600 font-normal">entregamos</span>.
-                  </h2>
-                  <p className="text-lg text-stone-500 mb-10 leading-relaxed font-light">
-                    Nossa logística própria atende toda a região metropolitana de Belo Horizonte com entregas programadas de segunda a sábado.
-                  </p>
-                  
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-white rounded-2xl flex items-center justify-center text-brand-600 shadow-sm border border-stone-100 flex-shrink-0">
-                        <CheckCircle2 className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-stone-900 text-sm uppercase tracking-widest mb-1">Belo Horizonte</h4>
-                        <p className="text-stone-400 text-xs">Todos os bairros com rotas diárias.</p>
-                      </div>
+            <div className="max-w-4xl mx-auto text-center mb-16">
+              <motion.div {...fadeIn}>
+                <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-[10px] font-bold uppercase tracking-[0.2em] mb-8">
+                  <MapPin className="w-3 h-3" />
+                  Área de Atendimento
+                </div>
+                <h2 className="text-4xl md:text-5xl font-heading font-medium text-stone-900 mb-8 tracking-tight">
+                  Onde <span className="italic text-brand-600 font-normal">entregamos</span>.
+                </h2>
+                <p className="text-lg text-stone-500 mb-10 leading-relaxed font-light">
+                  Nossa logística própria atende toda a região metropolitana de Belo Horizonte com entregas programadas de segunda a sábado.
+                </p>
+                
+                <div className="flex flex-wrap justify-center gap-8 mb-12">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-white rounded-xl flex items-center justify-center text-brand-600 shadow-sm border border-stone-100">
+                      <CheckCircle2 className="w-4 h-4" />
                     </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-white rounded-2xl flex items-center justify-center text-brand-600 shadow-sm border border-stone-100 flex-shrink-0">
-                        <CheckCircle2 className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-stone-900 text-sm uppercase tracking-widest mb-1">Região Metropolitana</h4>
-                        <p className="text-stone-400 text-xs">Contagem, Betim, Nova Lima e Santa Luzia.</p>
-                      </div>
+                    <div>
+                      <h4 className="font-bold text-stone-900 text-[10px] uppercase tracking-widest">Belo Horizonte</h4>
                     </div>
                   </div>
-
-                  <div className="mt-12">
-                    <a 
-                      href={WHATSAPP_LINK}
-                      className="inline-flex items-center gap-3 bg-stone-900 text-white px-8 py-4 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-brand-700 transition-all shadow-xl shadow-stone-200"
-                    >
-                      Consultar meu bairro
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-white rounded-xl flex items-center justify-center text-brand-600 shadow-sm border border-stone-100">
+                      <CheckCircle2 className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-stone-900 text-[10px] uppercase tracking-widest">Região Metropolitana</h4>
+                    </div>
                   </div>
-                </motion.div>
-              </div>
+                </div>
+              </motion.div>
+            </div>
 
-              <div className="lg:col-span-8">
-                <div className="h-[500px] rounded-[40px] overflow-hidden shadow-2xl border-8 border-white relative z-0">
-                  <MapContainer 
-                    center={[-19.9167, -43.9333]} 
-                    zoom={12} 
-                    scrollWheelZoom={false}
-                    className="h-full w-full"
-                  >
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="h-[400px] md:h-[600px] rounded-[40px] overflow-hidden shadow-2xl border-8 border-white relative z-0">
+                <MapContainer 
+                  center={[-19.9167, -43.9333]} 
+                  zoom={11} 
+                  scrollWheelZoom={false}
+                  className="h-full w-full"
+                >
                     <MapResizer />
                     <TileLayer
                       attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
@@ -801,10 +769,9 @@ export default function App() {
                     </Marker>
                   </MapContainer>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
-        </section>
+          </section>
 
         {/* Final CTA - High Contrast Conversion */}
         <section className="py-32 bg-[#FDFCFB]">
@@ -865,7 +832,7 @@ export default function App() {
 
             <div className="text-right">
               <h4 className="text-stone-900 font-bold text-xs uppercase tracking-widest mb-6">Contato</h4>
-              <p className="text-stone-900 font-bold text-sm tracking-tight mb-1">(31) 9999-9999</p>
+              <p className="text-stone-900 font-bold text-sm tracking-tight mb-1">(31) 98423-1605</p>
               <p className="text-stone-400 text-[10px] font-bold uppercase tracking-widest">Belo Horizonte - MG</p>
               <p className="text-stone-400 text-[10px] font-bold uppercase tracking-widest mt-2">contato@empadascaseiras.com.br</p>
             </div>
