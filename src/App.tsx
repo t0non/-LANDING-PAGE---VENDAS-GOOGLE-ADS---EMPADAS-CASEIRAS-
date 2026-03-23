@@ -302,11 +302,11 @@ export default function App() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="mt-12"
+                  className="mt-12 flex justify-center lg:justify-start"
                 >
                   <a 
                     href={WHATSAPP_LINK}
-                    className="inline-flex items-center gap-3 bg-stone-900 text-white px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-600 transition-all shadow-xl"
+                    className="inline-flex items-center gap-3 bg-[#25D366] text-white px-10 py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-[#1ebe57] transition-all shadow-xl"
                   >
                     Quero ser um parceiro
                     <img src={WHATSAPP_ICON_URL} alt="WhatsApp" className="w-4 h-4 object-contain brightness-0 invert" referrerPolicy="no-referrer" />
