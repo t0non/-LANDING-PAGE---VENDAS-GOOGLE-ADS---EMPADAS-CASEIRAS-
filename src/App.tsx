@@ -142,7 +142,7 @@ export default function App() {
                     Fornecedor de Salgados em BH e Região
                   </div>
                   <h1 className="text-4xl md:text-7xl font-heading font-medium leading-[1.05] text-stone-900 mb-6 lg:mb-8 tracking-tight">
-                    Fornecedor de Empadas <span className="italic text-brand-600 font-normal">Atacado e Varejo</span> em BH.
+                    Fornecedor de Empadas <span className="italic text-brand-600 font-normal">Exclusivo no Atacado</span> em BH.
                   </h1>
                   <p className="text-lg lg:text-xl text-stone-500 mb-8 lg:mb-10 leading-relaxed max-w-xl font-light">
                     Fábrica com mais de 14 anos de tradição. Fornecemos empadas prontas e congeladas com massa superfina e recheios premium para lanchonetes, bares e restaurantes.
@@ -340,7 +340,7 @@ export default function App() {
               <motion.div {...fadeIn}>
                 <h2 className="text-4xl md:text-5xl font-heading font-medium text-stone-900 mb-6 tracking-tight">Nosso Cardápio Completo</h2>
                 <p className="text-stone-500 max-w-2xl mx-auto font-body font-light text-lg leading-relaxed">
-                  Trabalhamos com mais de 25 sabores de empadas, além de tortinhas, pastel assado e empadões com vários sabores.
+                  Trabalhamos com mais de 25 sabores de empadas, além de tortinhas e pastel assado.
                 </p>
               </motion.div>
             </div>
@@ -514,7 +514,7 @@ export default function App() {
                       <h3 className="text-lg font-heading font-bold uppercase tracking-widest">Pastel Assado</h3>
                     </div>
                     <ul className="space-y-4">
-                      {["Frango", "Frango com Catupiry", "Empadões (Vários Sabores)"].map((sabor, i) => (
+                      {["Frango puro", "Frango com Catupiry"].map((sabor, i) => (
                         <li key={i} className="flex items-center gap-4 text-white/80 font-body font-light group">
                           <div className="w-1.5 h-1.5 rounded-full bg-white/30 group-hover:bg-white transition-all" />
                           <span className="group-hover:text-white transition-colors">{sabor}</span>
@@ -686,12 +686,12 @@ export default function App() {
                 answer="Nossos produtos são entregues congelados e prontos, facilitando o dia a dia. Todos os salgados são embalados e lacrados com identificação do sabor e tempo de validade em cada embalagem." 
               />
               <FAQItem 
-                question="Vocês atendem apenas atacado?" 
-                answer="Atendemos tanto atacado quanto varejo. Trabalhamos com varejo em nossa loja física e oferecemos preços especiais e competitivos no atacado para quem deseja revender em lanchonetes, bares e restaurantes." 
+                question="Vocês atendem apenas no atacado?" 
+                answer="Sim, atendemos exclusivamente no atacado. Oferecemos preços especiais e competitivos para quem deseja revender em lanchonetes, bares e restaurantes." 
               />
               <FAQItem 
                 question="Como funciona o faturamento para empresas?" 
-                answer="Oferecemos condições de faturamento quinzenal ou mensal para parceiros cadastrados e com recorrência de pedidos." 
+                answer="O pagamento é feito na entrega ou, no máximo, via boleto de 5 dias para parceiros cadastrados." 
               />
             </div>
           </div>
