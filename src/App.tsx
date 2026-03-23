@@ -346,21 +346,26 @@ export default function App() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-              {/* Column 1: Empadas de Frango */}
+              {/* Column 1: Empadas de Frango - BEST SELLER HIGHLIGHT */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
-                className="bg-white p-10 rounded-[40px] shadow-sm border border-stone-100 flex flex-col hover:shadow-md transition-all duration-300"
+                className="bg-white p-10 rounded-[40px] shadow-xl border-2 border-brand-500/20 flex flex-col hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
               >
+                {/* Best Seller Badge */}
+                <div className="absolute top-0 right-0 bg-brand-600 text-white px-6 py-2 rounded-bl-3xl text-[10px] font-bold uppercase tracking-[0.2em] shadow-lg z-10">
+                  Campeão de Vendas
+                </div>
+
                 <div className="flex items-center gap-4 mb-10 pb-6 border-b border-stone-50">
-                  <div className="w-12 h-12 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600">
-                    <Award className="w-6 h-6" />
+                  <div className="w-12 h-12 bg-brand-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-brand-100">
+                    <Star className="w-6 h-6 fill-current" />
                   </div>
                   <div>
                     <h3 className="text-xl font-heading font-bold text-stone-900 uppercase tracking-widest">Empadas de Frango</h3>
-                    <p className="text-[10px] text-stone-400 font-bold uppercase tracking-widest mt-1">11 Sabores Disponíveis</p>
+                    <p className="text-[10px] text-brand-600 font-bold uppercase tracking-widest mt-1">Nossa Especialidade</p>
                   </div>
                 </div>
                 <ul className="space-y-5">
