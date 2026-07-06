@@ -329,7 +329,7 @@ export default function App() {
               <div className="relative flex flex-col items-center lg:block">
                 <div className="aspect-square rounded-[60px] overflow-hidden shadow-2xl w-full">
                   <img 
-                    src="/img_terceira_sessão.jpg" 
+                    src="/img_terceira_sessao.jpg" 
                     alt="Fornecimento Especializado" 
                     className="w-full h-full object-cover" 
                     referrerPolicy="no-referrer" 
@@ -581,7 +581,7 @@ export default function App() {
             </div>
             <div className="relative rounded-[32px] lg:rounded-[60px] overflow-hidden h-[300px] lg:h-[600px] shadow-2xl">
               <img 
-                src="/img_quinta_sessão.jpg" 
+                src="/img_quinta_sessao.jpg" 
                 alt="Variedade de Empadas Caseiras" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
